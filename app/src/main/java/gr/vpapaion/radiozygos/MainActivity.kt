@@ -5,12 +5,14 @@ import android.content.ComponentName
 import android.os.Build
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.common.Player
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
+import coil.load
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
 
@@ -31,6 +33,13 @@ class MainActivity : AppCompatActivity() {
 
         playPauseButton = findViewById(R.id.playPauseButton)
         statusText = findViewById(R.id.statusText)
+
+        val stationLogo: ImageView = findViewById(R.id.stationLogo)
+        stationLogo.load(STATION_LOGO_URL) {
+            crossfade(true)
+            placeholder(R.drawable.ic_radio)
+            error(R.drawable.ic_radio)
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -77,5 +86,9 @@ class MainActivity : AppCompatActivity() {
         playPauseButton.setImageResource(if (isPlaying) R.drawable.ic_pause else R.drawable.ic_play_arrow)
         playPauseButton.contentDescription = if (isPlaying) getString(R.string.pause) else getString(R.string.play)
         statusText.text = if (isPlaying) getString(R.string.playing_now) else getString(R.string.ready_to_play)
+    }
+
+    companion object {
+        private const val STATION_LOGO_URL = "https://cdn.e-radio.gr/logos/gr/big/radiozygostrikala.jpg"
     }
 }
