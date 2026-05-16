@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background">#101820</color>
+    <color name="card_background">#FFFFFF</color>
     <color name="text_primary">#FFFFFF</color>
     <color name="text_secondary">#D6D6D6</color>
+    <color name="text_muted">#9EA4AA</color>
+    <color name="accent">#F0A020</color>
+    <color name="accent_dark">#C47700</color>
     <color name="purple_500">#6200EE</color>
     <color name="purple_700">#3700B3</color>
     <color name="teal_200">#03DAC5</color>
