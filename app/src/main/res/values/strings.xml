@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Radio Zygos 100</string>
+    <string name="station_subtitle">Trikala FM 100 - Live stream</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="playing_now">Playing live</string>
+    <string name="ready_to_play">Press Play to listen</string>
+</resources>
